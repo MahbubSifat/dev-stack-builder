@@ -4,7 +4,7 @@ import logoText from "../assets/logo-text.png";
 function Navbar() {
     const [menuOpen, setMenuOpen] = useState(false);
     return (
-        <nav className="sticky top-0 z-50 bg-white border-b border-gray-200">
+        <nav className="sticky top-0 z-50 bg-white border-b border-gray-200 relative">
             <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
 
                 {/* Mobile Menu Button */}
