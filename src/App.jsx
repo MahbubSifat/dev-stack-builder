@@ -202,7 +202,7 @@ function App() {
                   onClick={() =>
                     handleRemoveFromStack(technology.id)
                   }
-                  className="text-gray-400 hover:text-red-500"
+                 className="text-gray-400 hover:text-red-500 hover:bg-red-50 rounded-full w-7 h-7 transition"
                 >
                   ✕
                 </button>
