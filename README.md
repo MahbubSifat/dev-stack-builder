@@ -1,52 +1,65 @@
 # Dev Stack Builder
 
-Dev Stack Builder is a responsive React website that helps developers explore different technologies and create their own technology stack.
+Dev Stack Builder is a simple React project where users can explore some popular web development technologies and build their own technology stack.
+
+I made this project to practice React concepts like components, props, state, useEffect, JSON data, and event handling.
 
 ## Technologies Used
 
-- React
-- JavaScript
-- Tailwind CSS
-- React Toastify
-- JSON
-- Vite
+* React
+* JavaScript
+* Tailwind CSS
+* React Toastify
+* JSON
+* Vite
 
-## Key Features
+## Main Features
 
-1. Browse different web development technologies with ratings, difficulty levels, categories, and descriptions.
-2. Add technologies to a personal stack without allowing duplicate items.
-3. Remove individual technologies or clear the entire stack with toast notifications.
+1. Users can see different technologies with their name, category, description, rating, and difficulty level.
+
+2. Users can add a technology to their own stack. The same technology cannot be added more than once.
+
+3. Users can remove a technology from the stack or remove all selected technologies at once.
 
 ## React Concepts
 
-### 1. What is JSX?
+### 1. What is JSX, and why is it used in React?
 
-JSX is a syntax used in React to write HTML-like code inside JavaScript. It makes UI code easier to read and write.
+JSX is a way to write HTML-like code inside JavaScript. I used JSX in this project to create the UI of my React components. It makes the code easier for me to understand.
 
-### 2. What are Props?
+### 2. What is the difference between Props and State?
 
-Props are used to pass data from a parent component to a child component.
+Props are used to send data from a parent component to a child component. State is used to store data that can change in a component.
 
-### 3. What is State?
+### 3. What does the useState hook do?
 
-State is data that can change during the lifetime of a React component. I used `useState` to manage technologies, stack items, loading, and error states.
+`useState` is a React Hook that helps us create and change state in a component.
 
-### 4. What is useState?
+I used `useState` in my project to manage the technology list, selected stack, and loading state.
 
-`useState` is a React Hook used to create and manage state inside a functional component.
+### 4. What does the useEffect hook do?
 
-### 5. What is useEffect?
+`useEffect` is used when we need to perform something after a component renders.
 
-`useEffect` is used to perform side effects in React. I used it to fetch technology data from the JSON file when the application loads.
+I used `useEffect` to load the technology data from my JSON file when the website starts.
 
-### 6. What are Keys?
+### 5. Why does every item in a .map() list need a unique key?
 
-Keys help React identify individual elements when rendering a list. I used the technology `id` as the key.
+React needs a unique key to identify each item in a list. It helps React understand which item has changed, added, or removed.
 
-### 7. What is Conditional Rendering?
+In my project, I used the technology `id` as the key.
 
-Conditional rendering means showing different UI based on a condition. For example, I show a loading screen while data is loading and an empty-stack message when no technology is selected.
+### 6. What is Conditional Rendering?
 
-### 8. How does Parent-Child Communication work?
+Conditional rendering means showing something based on a condition.
 
-A parent component can send data or functions to a child component using props. In this project, `App.jsx` sends technology data and the `onAddToStack` function to `TechnologyCard`.
+For example, when no technology is added, I show an empty stack message. When technologies are added, I show the selected technologies instead.
+
+### 7. How do you pass data from a parent component to a child component, and how does a child send something back to the parent?
+
+A parent component can send data or a function to a child component using props.
+
+In my project, `App.jsx` sends technology data and the `onAddToStack` function to the `TechnologyCard` component.
+
+The child component can call the function received through props when the user clicks the **Add to Stack** button.
+
