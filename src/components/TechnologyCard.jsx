@@ -1,7 +1,6 @@
 function TechnologyCard({ technology, onAddToStack, isAdded }) {
   return (
     <div className="border border-gray-200 rounded-xl p-5 bg-white hover:shadow-lg hover:-translate-y-1 transition-all duration-200">
-
       <div className="flex items-center justify-between">
         <img
           src={technology.icon}
@@ -47,7 +46,6 @@ function TechnologyCard({ technology, onAddToStack, isAdded }) {
       >
         {isAdded ? "✓ Added to Stack" : "Add to Stack"}
       </button>
-
     </div>
   );
 }
