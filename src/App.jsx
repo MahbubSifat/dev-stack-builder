@@ -95,7 +95,7 @@ function App() {
           </div>
 
           {/* Your Stack */}
-          <div className="border border-gray-200 rounded-xl p-5 bg-white h-fit">
+          <div className="border border-gray-200 rounded-xl p-5 bg-white h-fit shadow-sm lg:sticky lg:top-24">
 
             <div className="flex items-center justify-between">
               <div>
@@ -117,9 +117,13 @@ function App() {
 
             {/* Empty State */}
             {stack.length === 0 && (
-              <div className="border border-dashed rounded-lg p-6 mt-4 text-center">
-                <p className="text-sm text-gray-400">
-                  Your stack is empty.
+              <div className="border border-dashed border-gray-300 rounded-lg p-8 mt-4 text-center">
+                <div className="text-3xl mb-2">🧩</div>
+                <p className="font-medium text-gray-600">
+                  Your stack is empty
+                </p>
+                <p className="text-xs text-gray-400 mt-1">
+                  Add technologies to build your stack.
                 </p>
               </div>
             )}
