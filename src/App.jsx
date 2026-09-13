@@ -66,22 +66,22 @@ function App() {
   }, []);
 
   if (error) {
-  return (
-    <div className="min-h-screen flex items-center justify-center">
-      <div className="text-center">
-        <div className="text-4xl">⚠️</div>
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <div className="text-center">
+          <div className="text-4xl">⚠️</div>
 
-        <h2 className="text-xl font-bold text-gray-700 mt-3">
-          Something went wrong
-        </h2>
+          <h2 className="text-xl font-bold text-gray-700 mt-3">
+            Something went wrong
+          </h2>
 
-        <p className="text-sm text-gray-400 mt-2">
-          {error}
-        </p>
+          <p className="text-sm text-gray-400 mt-2">
+            {error}
+          </p>
+        </div>
       </div>
-    </div>
-  );
-}
+    );
+  }
 
   if (loading) {
     return (
@@ -112,12 +112,12 @@ function App() {
         <ToastContainer />
 
         <div className="mb-8">
-          <h2 className="text-3xl font-bold">
-            Explore Technologies
+          <h2 className="text-3xl md:text-4xl font-bold">
+            Explore the <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 via-pink-500 to-violet-600">Technologies</span>
           </h2>
 
           <p className="text-gray-500 mt-2">
-            Discover the tools and technologies you need to build modern applications.
+            Pick one Technology per category to build your ideal stack.
           </p>
         </div>
 
