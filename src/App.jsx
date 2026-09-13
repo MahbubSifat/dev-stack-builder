@@ -10,6 +10,7 @@ function App() {
   const [technologies, setTechnologies] = useState([]);
   const [stack, setStack] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState("");
 
   // Add technology
   const handleAddToStack = (technology) => {
@@ -47,15 +48,57 @@ function App() {
   // Load JSON data
   useEffect(() => {
     fetch("/data/technologies.json")
-      .then((res) => res.json())
+      .then((res) => {
+        if (!res.ok) {
+          throw new Error("Failed to load technologies");
+        }
+
+        return res.json();
+      })
       .then((data) => {
         setTechnologies(data);
+        setLoading(false);
+      })
+      .catch(() => {
+        setError("Failed to load technologies. Please try again.");
         setLoading(false);
       });
   }, []);
 
+  if (error) {
+  return (
+    <div className="min-h-screen flex items-center justify-center">
+      <div className="text-center">
+        <div className="text-4xl">⚠️</div>
+
+        <h2 className="text-xl font-bold text-gray-700 mt-3">
+          Something went wrong
+        </h2>
+
+        <p className="text-sm text-gray-400 mt-2">
+          {error}
+        </p>
+      </div>
+    </div>
+  );
+}
+
   if (loading) {
-    return <h2>Loading technologies...</h2>;
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <div className="text-center">
+          <div className="w-10 h-10 border-4 border-gray-200 border-t-purple-500 rounded-full animate-spin mx-auto"></div>
+
+          <h2 className="mt-4 text-lg font-semibold text-gray-700">
+            Loading technologies...
+          </h2>
+
+          <p className="text-sm text-gray-400 mt-1">
+            Please wait a moment
+          </p>
+        </div>
+      </div>
+    );
   }
 
 
