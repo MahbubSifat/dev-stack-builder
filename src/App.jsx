@@ -4,6 +4,7 @@ import "react-toastify/dist/ReactToastify.css";
 import TechnologyCard from "./components/TechnologyCard";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
+import Footer from "./components/Footer";
 
 function App() {
   const [technologies, setTechnologies] = useState([]);
@@ -177,6 +178,8 @@ function App() {
         </div>
 
       </div>
+
+      <Footer />
     </>
   );
 }
